@@ -1,5 +1,4 @@
 const express = require("express");
-const Joi = require("joi");
 const posts = require("./routes/posts.js");
 const tags = require("./routes/tags.js");
 const dummyHome = require("./routes/dummyhome.js");

@@ -50,7 +50,7 @@ router.put("/:id", (req, res) => {
   res.send(post);
 });
 
-function validatePost(course) {
+function validatePost(post) {
   const schema = {
     name: Joi.string()
       .min(3)
