@@ -15,7 +15,7 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const post = postsData.find(c => c.id === parseInt(req.params.id));
-  if (!post) return res.status(404).send("course not found");
+  if (!post) return res.status(404).send("post not found");
   res.send(post);
 });
 
@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   const post = postsData.find(c => c.id === parseInt(req.params.id));
-  if (!post) return res.status(404).send("course not found");
+  if (!post) return res.status(404).send("post not found");
   const index = postsData.indexOf(post);
   postsData.splice(index, 1);
   res.send(post);
@@ -42,7 +42,7 @@ router.delete("/:id", (req, res) => {
 
 router.put("/:id", (req, res) => {
   const post = postsData.find(c => c.id === parseInt(req.params.id));
-  if (!post) return res.status(404).send("course not found");
+  if (!post) return res.status(404).send("post not found");
   const { error } = validatePost(req.body);
   if (error) return res.status(400).send(error.details[0].message);
 
